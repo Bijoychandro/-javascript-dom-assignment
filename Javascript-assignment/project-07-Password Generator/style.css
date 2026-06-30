@@ -1,0 +1,258 @@
+/* style.css - Password Generator Styling */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 24px;
+    padding: 40px 35px 35px;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+h1 {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.password-display {
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 14px;
+    padding: 18px 20px;
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid rgba(100, 200, 255, 0.15);
+    transition: border-color 0.3s ease;
+}
+
+.password-display:hover {
+    border-color: rgba(100, 200, 255, 0.3);
+}
+
+#passwordOutput {
+    color: #00f5ff;
+    font-size: 1.3rem;
+    font-weight: 600;
+    font-family: 'Courier New', monospace;
+    word-break: break-all;
+    flex: 1;
+    letter-spacing: 1px;
+    text-shadow: 0 0 20px rgba(0, 245, 255, 0.1);
+}
+
+.copy-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.4rem;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-left: 10px;
+}
+
+.copy-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    transform: scale(1.05);
+}
+
+.copy-btn.copied {
+    background: rgba(0, 255, 100, 0.2);
+    color: #00ff64;
+}
+
+.options {
+    margin-bottom: 25px;
+}
+
+.option-group {
+    margin-bottom: 20px;
+}
+
+.option-group label {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95rem;
+    display: block;
+    margin-bottom: 8px;
+}
+
+input[type="range"] {
+    width: 100%;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 3px;
+    outline: none;
+    -webkit-appearance: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #00f5ff;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(0, 245, 255, 0.3);
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #00f5ff;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 0 20px rgba(0, 245, 255, 0.3);
+}
+
+#lengthValue {
+    color: #00f5ff;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.checkbox-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.checkbox-group label {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    padding: 8px 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.checkbox-group label:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: #00f5ff;
+}
+
+button#generateBtn {
+    width: 100%;
+    padding: 16px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #0f3460;
+    background: linear-gradient(135deg, #00f5ff 0%, #00d4ff 100%);
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 30px rgba(0, 245, 255, 0.3);
+}
+
+button#generateBtn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 40px rgba(0, 245, 255, 0.5);
+}
+
+button#generateBtn:active {
+    transform: translateY(0) scale(0.98);
+}
+
+.strength {
+    margin-top: 20px;
+    text-align: center;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+}
+
+.strength-label {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.9rem;
+    margin-right: 8px;
+}
+
+.strength-value {
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.strength-value.weak {
+    color: #ff6b6b;
+}
+
+.strength-value.medium {
+    color: #ffd93d;
+}
+
+.strength-value.strong {
+    color: #6bcb77;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .card {
+        padding: 30px 20px 25px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+        margin-bottom: 25px;
+    }
+
+    #passwordOutput {
+        font-size: 1.1rem;
+    }
+
+    .checkbox-group {
+        grid-template-columns: 1fr;
+    }
+
+    button#generateBtn {
+        padding: 14px;
+        font-size: 1rem;
+    }
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gradient Background Generator</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>🎨 Gradient Generator</h1>
+            
+            <div class="gradient-preview" id="gradientPreview">
+                <div class="color-box color1" id="colorBox1">
+                    <span id="colorCode1">#ff0000</span>
+                </div>
+                <div class="gradient-arrow">→</div>
+                <div class="color-box color2" id="colorBox2">
+                    <span id="colorCode2">#00ff00</span>
+                </div>
+            </div>
+            
+            <div class="controls">
+                <button id="randomBtn" class="btn btn-primary">🎲 Random Colors</button>
+                <button id="swapBtn" class="btn btn-secondary">🔄 Swap Colors</button>
+            </div>
+            
+            <div class="direction-controls">
+                <label>Direction:</label>
+                <button class="dir-btn active" data-direction="to right">→</button>
+                <button class="dir-btn" data-direction="to left">←</button>
+                <button class="dir-btn" data-direction="to bottom">↓</button>
+                <button class="dir-btn" data-direction="to top">↑</button>
+                <button class="dir-btn" data-direction="to bottom right">↘</button>
+                <button class="dir-btn" data-direction="to bottom left">↙</button>
+            </div>
+            
+            <div class="css-code">
+                <label>CSS Code:</label>
+                <div class="code-display" id="cssCode">
+                    background: linear-gradient(to right, #ff0000, #00ff00);
+                </div>
+                <button id="copyCssBtn" class="copy-code-btn">📋 Copy CSS</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

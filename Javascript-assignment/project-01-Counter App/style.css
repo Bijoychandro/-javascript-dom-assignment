@@ -1,0 +1,169 @@
+/* style.css - Counter App Styling */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 20px;
+}
+
+.counter-container {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 40px 50px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+    transition: transform 0.3s ease;
+}
+
+.counter-container:hover {
+    transform: translateY(-5px);
+}
+
+h1 {
+    color: #2d3748;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+.counter-display {
+    background: #f7fafc;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 30px;
+    border: 2px solid #e2e8f0;
+}
+
+#counterValue {
+    font-size: 6rem;
+    font-weight: 700;
+    color: #2d3748;
+    display: inline-block;
+    min-width: 120px;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+/* Dynamic color based on value (added via JS) */
+#counterValue.positive {
+    color: #48bb78;
+}
+
+#counterValue.negative {
+    color: #fc8181;
+}
+
+#counterValue.zero {
+    color: #2d3748;
+}
+
+.button-group {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.btn {
+    padding: 14px 28px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 120px;
+    flex: 1;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+
+.btn-increment {
+    background: #48bb78;
+    color: white;
+    box-shadow: 0 4px 15px rgba(72, 187, 120, 0.4);
+}
+
+.btn-increment:hover {
+    background: #38a169;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(72, 187, 120, 0.5);
+}
+
+.btn-decrement {
+    background: #fc8181;
+    color: white;
+    box-shadow: 0 4px 15px rgba(252, 129, 129, 0.4);
+}
+
+.btn-decrement:hover {
+    background: #f56565;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(252, 129, 129, 0.5);
+}
+
+.btn-reset {
+    background: #a0aec0;
+    color: white;
+    box-shadow: 0 4px 15px rgba(160, 174, 192, 0.4);
+}
+
+.btn-reset:hover {
+    background: #718096;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(160, 174, 192, 0.5);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .counter-container {
+        padding: 30px 25px;
+    }
+
+    #counterValue {
+        font-size: 4.5rem;
+        min-width: 80px;
+    }
+
+    .btn {
+        min-width: 90px;
+        padding: 12px 18px;
+        font-size: 0.95rem;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .button-group {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .btn {
+        width: 100%;
+        min-width: unset;
+    }
+
+    #counterValue {
+        font-size: 3.5rem;
+    }
+}

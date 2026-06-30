@@ -1,0 +1,334 @@
+/* style.css - Simple Calculator Styling */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 480px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 24px;
+    padding: 35px 30px 30px;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+h1 {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.input-section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.input-group label {
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+.input-group input {
+    padding: 14px 16px;
+    font-size: 1.1rem;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.input-group input::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.input-group input:focus {
+    border-color: #667eea;
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.15);
+}
+
+.input-group input.error {
+    border-color: #fc8181;
+    background: rgba(252, 129, 129, 0.1);
+}
+
+.button-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.button-group button {
+    padding: 14px;
+    font-size: 1rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.button-group button:hover {
+    transform: translateY(-3px);
+}
+
+.button-group button:active {
+    transform: translateY(0) scale(0.96);
+}
+
+.btn-add {
+    background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+    color: white;
+    box-shadow: 0 4px 20px rgba(72, 187, 120, 0.3);
+}
+
+.btn-add:hover {
+    box-shadow: 0 8px 30px rgba(72, 187, 120, 0.5);
+}
+
+.btn-subtract {
+    background: linear-gradient(135deg, #fc8181 0%, #f56565 100%);
+    color: white;
+    box-shadow: 0 4px 20px rgba(252, 129, 129, 0.3);
+}
+
+.btn-subtract:hover {
+    box-shadow: 0 8px 30px rgba(252, 129, 129, 0.5);
+}
+
+.btn-multiply {
+    background: linear-gradient(135deg, #63b3ed 0%, #4299e1 100%);
+    color: white;
+    box-shadow: 0 4px 20px rgba(99, 179, 237, 0.3);
+}
+
+.btn-multiply:hover {
+    box-shadow: 0 8px 30px rgba(99, 179, 237, 0.5);
+}
+
+.btn-divide {
+    background: linear-gradient(135deg, #ecc94b 0%, #d69e2e 100%);
+    color: #1a202c;
+    box-shadow: 0 4px 20px rgba(236, 201, 75, 0.3);
+}
+
+.btn-divide:hover {
+    box-shadow: 0 8px 30px rgba(236, 201, 75, 0.5);
+}
+
+.result-section {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 25px;
+    text-align: center;
+    border: 2px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+    min-height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.result-section.show {
+    border-color: rgba(102, 126, 234, 0.4);
+}
+
+.result-label {
+    display: block;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.result-value {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #00f5ff;
+    text-shadow: 0 0 30px rgba(0, 245, 255, 0.2);
+}
+
+.result-value.error {
+    color: #fc8181;
+}
+
+.history-section {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    padding: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.history-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.history-header span {
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.clear-history {
+    padding: 4px 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.clear-history:hover {
+    background: rgba(252, 129, 129, 0.2);
+    border-color: #fc8181;
+    color: #fc8181;
+}
+
+.history-list {
+    max-height: 120px;
+    overflow-y: auto;
+}
+
+.history-list::-webkit-scrollbar {
+    width: 4px;
+}
+
+.history-list::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 2px;
+}
+
+.history-list::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 2px;
+}
+
+.history-empty {
+    color: rgba(255, 255, 255, 0.25);
+    text-align: center;
+    font-size: 0.85rem;
+    padding: 10px 0;
+}
+
+.history-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.85rem;
+}
+
+.history-item:last-child {
+    border-bottom: none;
+}
+
+.history-item .history-expression {
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.history-item .history-result {
+    font-weight: 700;
+    color: #00f5ff;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .card {
+        padding: 25px 18px 20px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+        margin-bottom: 25px;
+    }
+
+    .button-group {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .button-group button {
+        padding: 12px;
+        font-size: 0.85rem;
+    }
+
+    .result-value {
+        font-size: 2rem;
+    }
+
+    .input-group input {
+        padding: 12px 14px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 380px) {
+    .button-group {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+    }
+
+    .button-group button {
+        padding: 10px 8px;
+        font-size: 0.75rem;
+    }
+
+    .result-value {
+        font-size: 1.6rem;
+    }
+}

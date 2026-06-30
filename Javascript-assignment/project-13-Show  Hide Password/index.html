@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Show / Hide Password</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>🔐 Show / Hide Password</h1>
+            
+            <div class="password-container">
+                <div class="input-wrapper">
+                    <input type="password" id="passwordInput" placeholder="Enter your password" />
+                    <button id="toggleBtn" class="toggle-btn">
+                        <span class="eye-icon" id="eyeIcon">👁️</span>
+                        <span class="toggle-text" id="toggleText">Show</span>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="password-strength" id="strengthSection">
+                <span class="strength-label">Password Strength:</span>
+                <div class="strength-bar">
+                    <div class="strength-fill" id="strengthFill"></div>
+                </div>
+                <span class="strength-text" id="strengthText">Weak</span>
+            </div>
+            
+            <div class="options">
+                <label class="checkbox-label">
+                    <input type="checkbox" id="showStrength" checked />
+                    Show Strength Meter
+                </label>
+            </div>
+            
+            <div class="demo-text">
+                <p>💡 Click the eye button to toggle password visibility</p>
+                <p class="hint">Password: <span class="demo-password">demo@123</span></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

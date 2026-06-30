@@ -1,0 +1,140 @@
+/* style.css - Character Counter Styling */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 550px;
+}
+
+.card {
+    background: white;
+    border-radius: 20px;
+    padding: 35px 30px 30px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+h1 {
+    color: #2d3748;
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+textarea {
+    width: 100%;
+    padding: 15px;
+    font-size: 1rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    resize: vertical;
+    transition: border-color 0.3s ease;
+    font-family: inherit;
+    line-height: 1.6;
+    min-height: 150px;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+textarea::placeholder {
+    color: #a0aec0;
+}
+
+.stats {
+    display: flex;
+    gap: 20px;
+    margin-top: 25px;
+    justify-content: center;
+}
+
+.stat-item {
+    flex: 1;
+    text-align: center;
+    padding: 15px 10px;
+    background: #f7fafc;
+    border-radius: 12px;
+    border: 2px solid #e2e8f0;
+    transition: all 0.3s ease;
+}
+
+.stat-item:hover {
+    border-color: #667eea;
+    background: #edf2f7;
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.85rem;
+    color: #718096;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 5px;
+}
+
+.stat-value {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2d3748;
+}
+
+.stat-value.highlight {
+    color: #667eea;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .card {
+        padding: 25px 18px 20px;
+    }
+
+    h1 {
+        font-size: 1.4rem;
+        margin-bottom: 20px;
+    }
+
+    textarea {
+        font-size: 0.95rem;
+        padding: 12px;
+        min-height: 120px;
+    }
+
+    .stats {
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    .stat-item {
+        flex: 1 1 100px;
+        padding: 12px 8px;
+    }
+
+    .stat-value {
+        font-size: 1.6rem;
+    }
+}
